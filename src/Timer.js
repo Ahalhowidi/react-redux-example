@@ -8,14 +8,12 @@ class Timer extends React.Component {
         super();
         let interval;
     }
+   
+    componentDidMount() {
+        this.interval = setInterval(() => this.props.Tick(), 10);
+    }
 
-    // componentDidMount() {
-    //     this.interval = setInterval(() => this.props.Tick(), 0);
-    // }
-
-    // componentWillUnmount() {
-    //     clearInterval(this.interval);
-    // }
+    
 
 format(time) {
     const pad = (time, length) => {

@@ -11,10 +11,15 @@ const reducer = (state = initialState, action) => {
         isOn: true,
       };
     case "Tick":
-      return {
+    if (state.isOn) {
+       return {
          ...state,
-        time: state.time + 1
+        time: state.time + 10
       };
+    }else{
+      return state
+    };
+     
     case "Stop":
       return {
          ...state,
